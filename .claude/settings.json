@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/hooks/draft-decision.sh\"",
+            "timeout": 120
+          }
+        ]
+      }
+    ]
+  }
+}
