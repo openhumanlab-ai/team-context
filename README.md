@@ -10,6 +10,7 @@ My Claude knew how I think. My team's Claude didn't, and every handoff lost more
 - `DECISIONS.md`: append-only. Each entry is what we chose, what we ruled out, and what would make us revisit.
 - `STATE.md`: what's true this week. Overwrite freely.
 - `REOPENED.md`: one line each time a settled decision gets argued again. The one number we track.
+- A decision that makes old text false quotes it on a `Retires:` line. `hooks/check-retired.sh` finds any of those sentences still left in STATE.md, PLAN.md or the code.
 - A Claude Code hook drafts a decision note when a session ends. A human approves it (inbox, or a PR with `TEAM_CONTEXT_PR=1`). Nothing goes in automatically.
 
 `CLAUDE.md` imports these files so Claude always has them loaded. `AGENTS.md` has the same instructions for Codex and Cursor.

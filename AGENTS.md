@@ -10,6 +10,8 @@ This project keeps its shared context in three files, in the same folder as this
 
 Claude Code: skip this paragraph, the session-end hook drafts the note for you. Codex, Cursor and anything else without that hook: if a trade-off was settled during this session, write a draft decision note into `inbox/` using `templates/decision.md`, leaving the number as D-XXX. Three lines. What was chosen, what was ruled out, what would make us revisit it. A human will approve or delete it. Do not write directly into `DECISIONS.md`.
 
+If a decision you draft makes existing text false, in `STATE.md`, `PLAN.md`, a README or a code comment, add a `Retires:` line quoting each of those sentences exactly. `hooks/check-retired.sh` finds them if they're still around.
+
 If you changed something that `STATE.md` describes, update `STATE.md` directly. That file is meant to be overwritten.
 
 If you notice a decision already in `DECISIONS.md` being questioned or re-made in this session, say so, and append one line to `REOPENED.md`: the date, the decision number, and what happened. That log is how we know whether this repo is working.
