@@ -14,6 +14,8 @@ Revisit if: the condition that would reopen this
 Owner: who to ask
 ```
 
+Two optional lines. When a decision replaces an old one, add `Supersedes: D-00N`. When it makes a sentence elsewhere false, add a `Retires:` line quoting it word for word, for example `Retires: "We use Redis for the job queue."`. `hooks/check-retired.sh` finds any of those sentences still sitting in the project.
+
 ---
 
 ## D-001  2026-09-24  Context lives in this repo, not in agent memory

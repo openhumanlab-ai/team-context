@@ -59,6 +59,16 @@ If more than 10 drafts or decision PRs are sitting there unread, approval is the
 - Doesn't run on every message, only when the session ends.
 - Doesn't send your transcript anywhere except to your own Claude CLI. The drafter runs with no tools and isn't saved as a session.
 
+## Retired sentences
+
+A new decision can make a line in `STATE.md`, `PLAN.md` or a code comment false while the line stays put, and the next person reads it and re-argues the old choice. When a decision quotes those lines on a `Retires:` line, this finds any still in the project. Use straight double quotes, and quote a phrase that sits on one line, since text wrapped across lines never matches.
+
+```
+hooks/check-retired.sh              # prints file:line for each, exits 1 if any are left
+```
+
+It searches the git repo the hooks folder is in, so an installed copy covers your whole project. Pass a directory to search somewhere else. It exits 1 when something is left and 2 on an error, like a Retires line with nothing quoted. The session-end drafter can't see your files, so add the Retires line yourself when you approve a draft. Test: `tests/check-retired.sh` (in the team-context repo).
+
 ## Codex and other agents
 
 Codex doesn't have the same hook system yet. For now, `AGENTS.md` tells it to draft the note itself at the end of a session. Same template, same inbox. If you know a cleaner way, open a PR.
